@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Rival Brief Sample #1 — Scheduling pricing & plan structure: Calendly vs Cal.com vs SavvyCal (as of 2026-09-02)</title>
 <style>
-@page { size: letter; margin: 0.6in 0.65in 0.7in 0.65in; }
+@page { size: letter; margin: 0.58in 0.6in 0.6in 0.6in; }
 html, body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 10.5pt;
@@ -12,53 +12,109 @@ html, body {
   color: #111;
   max-width: 100%;
 }
-h1 { font-size: 16pt; line-height: 1.25; margin: 0 0 0.4em; }
-h2 { font-size: 13pt; margin: 1.3em 0 0.4em; page-break-after: avoid; border-bottom: 1px solid #ddd; padding-bottom: 0.15em; }
-h3 { font-size: 11.5pt; margin: 1em 0 0.35em; page-break-after: avoid; }
-p { margin: 0.4em 0; }
-ul, ol { margin: 0.35em 0 0.5em 1.2em; padding: 0; }
-li { margin: 0.15em 0; }
+h1 { font-size: 16pt; line-height: 1.25; margin: 0 0 0.35em; }
+h2 {
+  font-size: 13pt;
+  margin: 1.1em 0 0.32em;
+  page-break-after: avoid;
+  break-after: avoid-page;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.12em;
+}
+h3 {
+  font-size: 11.5pt;
+  margin: 0.75em 0 0.28em;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+h2 + p, h2 + ul, h2 + ol, h2 + table,
+h3 + p, h3 + ul, h3 + ol, h3 + table {
+  page-break-before: avoid;
+  break-before: avoid-page;
+}
+p { margin: 0.36em 0; }
+ul, ol { margin: 0.28em 0 0.4em 1.2em; padding: 0; }
+li { margin: 0.1em 0; }
 a { color: #0b57d0; text-decoration: none; }
 strong { font-weight: 650; }
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 8pt;
+  font-size: 8.5pt;
   line-height: 1.28;
-  margin: 0.6em 0 0.9em;
+  margin: 0.45em 0 0.7em;
   page-break-inside: auto;
 }
 thead { display: table-header-group; }
-tr { page-break-inside: avoid; }
+tr { page-break-inside: avoid; break-inside: avoid; }
 th, td {
   border: 1px solid #ccc;
-  padding: 4px 6px;
+  padding: 4px 5px;
   vertical-align: top;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 th { background: #f4f4f4; font-weight: 650; }
+.evidence-block {
+  margin: 0.3em 0 0.45em;
+}
+.evidence-caption {
+  page-break-after: avoid;
+  break-after: avoid-page;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.evidence-caption h3 {
+  margin-top: 0.4em;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+.evidence-caption ul {
+  margin-bottom: 0.15em;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
 img.evidence {
-  max-width: 52%;
+  max-width: 82%;
   height: auto;
   display: block;
-  margin: 0.35em 0 1.1em;
+  margin: 0.12em 0 0.22em;
   border: 1px solid #ddd;
-  page-break-inside: avoid;
+  page-break-before: avoid;
+  break-before: avoid-page;
 }
+/* Tall comparison table shot: constrain height so caption+img fit one page */
 img.evidence[src*="savvycal-comparison"] {
-  max-width: 78%;
+  max-width: 90%;
+  max-height: 7.6in;
+  width: auto;
+  object-fit: contain;
 }
 img.evidence[src*="calendly-enterprise"] {
-  max-width: 42%;
+  max-width: 58%;
 }
-hr { border: none; border-top: 1px solid #ddd; margin: 1.2em 0; }
-blockquote { margin: 0.5em 0; padding-left: 0.8em; border-left: 3px solid #ccc; color: #333; }
+/* Keep comparison block together now that height is capped */
+.evidence-block.evidence-tall {
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+  page-break-before: auto;
+}
+hr { border: none; border-top: 1px solid #ddd; margin: 0.9em 0; }
+blockquote {
+  margin: 0.4em 0;
+  padding-left: 0.8em;
+  border-left: 3px solid #ccc;
+  color: #333;
+}
 code { font-size: 8.5pt; }
 em { font-style: italic; }
+@media screen {
+  body { max-width: 920px; margin: 0 auto; padding: 24px 20px 48px; }
+}
 </style>
 </head>
 <body>
-
 <div id="rb-sample-bar" style="position:sticky;top:0;z-index:50;background:#0f172a;color:#f8fafc;font-family:system-ui,-apple-system,sans-serif;font-size:14px;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;">
   <div><strong>Rival Brief</strong> · Sample #1 (scheduling packaging)</div>
   <div style="display:flex;flex-wrap:wrap;gap:10px;">
@@ -66,15 +122,14 @@ em { font-style: italic; }
     <a href="rival-brief-sample-01.pdf" style="color:#f8fafc;text-decoration:none;border:1px solid #64748b;padding:4px 10px;border-radius:6px;">Download PDF</a>
   </div>
 </div>
-
 <h1>Rival Brief Sample #1 — Scheduling pricing &amp; plan structure: Calendly vs Cal.com vs SavvyCal (as of 2026-09-02)</h1>
 <blockquote>
 <p><strong>About this sample:</strong> Rival Brief is a custom <strong>pricing and plan-structure</strong> decision brief for your three competitors. Sample #1 is one concrete example in <strong>scheduling</strong> packaging — the same method, applied to Calendly vs Cal.com vs SavvyCal.</p>
 </blockquote>
-<p><strong>As of:</strong> 2026-09-02 HST (pages fetched live 2026-09-02 evening HST / 2026-09-03 UTC).<br />
-<strong>Browser pass:</strong> Chrome, rendered cards, 2026-09-02 evening HST / 2026-09-03 UTC — Monthly/Annual clicked on all three; Calendly Plus toggle; Cal.com per-card YEARLY toggles; SavvyCal comparison scrolled. Screenshots in the visual evidence appendix.<br />
+<p><strong>As of:</strong> 2026-09-02 HST (pages fetched live 2026-09-02 evening HST / 2026-09-03 UTC).<br>
+<strong>Browser pass:</strong> Chrome, rendered cards, 2026-09-02 evening HST / 2026-09-03 UTC — Monthly/Annual clicked on all three; Calendly Plus toggle; Cal.com per-card YEARLY toggles; SavvyCal comparison scrolled. Screenshots in the visual evidence appendix.<br>
 <strong>Not</strong> legal advice, pricing advice, or a buy recommendation. Public pages only. No login. No checkout.</p>
-<hr />
+<hr>
 <h2>Executive Decision Layer</h2>
 <p>This brief is not about which scheduler to buy. It is about which <strong>pricing and plan structure</strong> to lock in for your own scheduling product (this sample’s concrete packaging decision).</p>
 <p><strong>Recommended structure:</strong> let individual users get real value from a useful free plan. Charge when a company needs team scheduling features such as <strong>round-robin</strong> (RR — meetings distributed across a team) and centrally managed events. Keep enterprise security features such as <strong>single sign-on (SSO)</strong> in a higher tier rather than forcing small teams into an expensive enterprise plan.</p>
@@ -90,7 +145,7 @@ em { font-style: italic; }
 <li><strong>Round-robin on the first paid team plan vs Calendly’s second paid tier.</strong> Cal.com Teams <strong>$12 /user/mo yearly</strong> ($16 monthly) includes round-robin plus managed/collective events. SavvyCal Basic <strong>$10 /user/mo</strong> Annual ($12 monthly) includes Collective / Round Robin / Group (screenshot comparison). Calendly round-robin is <strong>Teams and Enterprise only</strong> — after Standard <strong>$10 /seat/mo yearly</strong> ($12 monthly), now <strong>visible on the rendered card</strong>. Collective meetings are on Standard; <strong>team distribution</strong> is not.</li>
 <li><strong>Calendly Enterprise starts at $15k /yr, 50 seats, USD only</strong> (<a href="https://calendly.com/pricing">calendly.com/pricing</a>).</li>
 </ol>
-<p><strong>Biggest trap:</strong> copying a 50-seat SSO minimum. Calendly’s public SSO path is that Enterprise minimum or an <strong>unpriced</strong> Teams SSO add-on. <strong>[FACT]</strong> $15k / 50 seats is printed. <strong>[INFERENCE]</strong> a 5–25 person team cannot buy a 50-seat minimum. If you need compliance, copy Cal.com’s Organizations-style <strong>public</strong> tier — <strong>SAML</strong> (Security Assertion Markup Language, a common SSO standard) / <strong>SCIM</strong> (System for Cross-domain Identity Management, automated user provisioning) / HIPAA at <strong>$28 /user/mo yearly</strong>, <strong>$37 monthly</strong> — or a sales-led Enterprise plan <strong>without</strong> a 50-seat minimum as the only path.</p>
+<p><strong>Biggest trap:</strong> copying a 50-seat SSO minimum. Calendly’s public SSO path is that Enterprise minimum or an <strong>unpriced</strong> Teams SSO add-on. <strong>[FACT]</strong> $15k / 50 seats is printed. <strong>[INFERENCE]</strong> a 5–25 person company cannot purchase that public Enterprise offer at its actual seat count — it would have to overbuy to Calendly’s 50-seat minimum. If you need a public SSO/compliance tier, prefer Cal.com’s Organizations-style <strong>public</strong> tier, which lists <strong>SAML</strong> (Security Assertion Markup Language, a common SSO standard) / <strong>SCIM</strong> (System for Cross-domain Identity Management, automated user provisioning) and prints <strong>SOC 2 / HIPAA / ISO 27001</strong> claims on the Organizations card at <strong>$28 /user/mo yearly</strong>, <strong>$37 monthly</strong> — or a sales-led Enterprise plan <strong>without</strong> a 50-seat minimum as the only path. <strong>[FACT]</strong> those SAML/SCIM and compliance claims are printed on Cal.com’s public pages. <strong>[UNKNOWN / not independently established here]</strong> whether a Business Associate Agreement (BAA) or other contractual HIPAA entitlement is available on Organizations solely from the cited public pages beyond those printed claims.</p>
 <p><strong>Public team price band — their list prices, not your price.</strong> Plans that include round-robin / team scheduling. Chrome Monthly/Annual toggles clicked.</p>
 <table>
 <thead>
@@ -123,14 +178,14 @@ em { font-style: italic; }
 </tr>
 </tbody>
 </table>
-<p>Do <strong>not</strong> lock a <strong>core team</strong> plan through Cal.com Organizations <strong>$28 /user/mo yearly</strong> ($37 monthly) or Calendly Enterprise <strong>$15k/yr · 50 seats</strong> without a written reason. Do <strong>not</strong> lock an <strong>individual</strong> paid plan above Calendly Standard <strong>$10 /seat/mo yearly</strong> ($12 monthly) without a reason; Cal.com already covers the individual job at <strong>$0</strong>.</p>
+<p>Treat Cal.com Organizations <strong>$28 /user/mo yearly</strong> ($37 monthly) and Calendly Enterprise <strong>$15k/yr · 50 seats</strong> as <strong>org-security / procurement</strong> reference points — not the default band for a core team-scheduling plan — unless you have an explicit strategic rationale. Pricing an <strong>individual</strong> paid plan above Calendly Standard <strong>$10 /seat/mo yearly</strong> ($12 monthly) should have an explicit strategic rationale and be validated with customers; Cal.com already covers the individual job at <strong>$0</strong>. Competitor public prices are reference points, not proof of your correct price.</p>
 <p><strong>Biggest remaining uncertainty.</strong> Monthly toggles are <strong>closed</strong> (all seven target dollar amounts on-card). Remaining: <strong>yearly Standard Plus $ UNKNOWN</strong> (Plus clicked on monthly view only; not recaptured on annual; do not infer $18). <strong>Calendly Teams SSO add-on $ UNKNOWN / sales-gated.</strong> Yearly Teams Plus <strong>$24 /seat/mo billed annually (1–30 seats)</strong> is still official help, not a /pricing recapture this pass. Monthly Plus (Notetaker &amp; Callie ON): Standard Plus <strong>$24 /seat/mo</strong>, Teams Plus <strong>$32 /seat/mo</strong>.</p>
-<hr />
+<hr>
 <p><strong>What to do next:</strong> Freeze pricing and plan structure to the Cal.com Cloud shape: keep a useful free plan for individuals; charge when the company needs team scheduling (round-robin and managed/collective events); put enterprise security such as single sign-on in a higher public tier. Do <strong>not</strong> freeze a 50-seat Enterprise minimum as the SSO path. Do <strong>not</strong> freeze a paid-only two-plan ladder unless you are intentionally not running product-led growth (PLG). Use the public team price band above as a reference band only — their list prices, not your price.</p>
 <h2>1. Who this is for</h2>
 <p>You are the founder or Head of Product at a 5–25 person B2B software company about to lock in <strong>your</strong> scheduling packaging — which plans you offer, how you charge, what sits on the free plan vs paid plans, and what public list-price band you should not ignore.</p>
 <p>This is not “which scheduler should we buy.” It is: do we copy <strong>Calendly’s seat ladder with a Plus add-on and a 50-seat Enterprise minimum</strong>, <strong>Cal.com Cloud’s free-individual / paid-team split</strong> (with self-host as a different product), or <strong>SavvyCal’s two paid plans with no standing free plan</strong> — and what must stay available early if a 5–25 person B2B team is supposed to convert.</p>
-<hr />
+<hr>
 <h2>2. Method</h2>
 <ul>
 <li><strong>Sources:</strong> vendor pricing pages, official help/docs, and official security/legal pages. No login walls. No logged-in surfaces. No checkout. No third-party price blogs (UseCarly, Costbench, Zeeg, meetergo, wf.savvycal.com stale mirror) as price or feature sources.</li>
@@ -147,9 +202,9 @@ em { font-style: italic; }
 <li><strong>Cal.com monthly</strong> (YEARLY toggles off): Teams <strong>$16 per user/month</strong>, Organizations <strong>$37 per user/month</strong> (<code>calcom-monthly.png</code>). Yearly remains Teams <strong>$12</strong> / Organizations <strong>$28</strong> (<code>calcom-yearly.png</code>).</li>
 <li><strong>SavvyCal</strong> Annual: Basic <strong>$10/user/mo</strong>, Premium <strong>$17/user/mo</strong>, “Save 2 months” (<code>savvycal-annual.png</code>). Monthly: Basic <strong>$12/user/mo</strong>, Premium <strong>$20/user/mo</strong> (<code>savvycal-monthly.png</code>). 30-day money back visible above the cards. Comparison features from <code>savvycal-comparison.png</code> (not a search-index table). The older wf.savvycal.com $12 / $20 page is <strong>stale</strong> and is not used.</li>
 </ul>
-<hr />
+<hr>
 <h2>3. Data-verified matrix</h2>
-<p>Every cell: <strong>value · billed period · URL · as-of 2026-09-02</strong>.<br />
+<p>Every cell: <strong>value · billed period · URL · as-of 2026-09-02</strong>.<br>
 Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host.</p>
 <h3>3a. List prices (USD)</h3>
 <table>
@@ -285,25 +340,25 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 </tr>
 <tr>
 <td><strong>Compliance (SOC2 / HIPAA)</strong></td>
-<td>SOC 2 Type 2 + SOC 3 + CSA STAR on <a href="https://calendly.com/security">calendly.com/security</a>. “SOC 2 Type 2 and ISO/IEC 27001” on <a href="https://calendly.com/learn/it-teams">calendly.com/learn/it-teams</a> (updated 2026-09-02). <strong>HIPAA: not a sold plan.</strong> Customer Terms bar PHI/HIPAA in Customer Data. Notetaker FAQ (search hit, page timed out on re-fetch): “Calendly isn&rsquo;t designed to collect Protected Health Information.” Treat HIPAA as <strong>not offered</strong>, not as a plan feature. · n/a · <a href="https://calendly.com/security">security</a>; <a href="https://calendly.com/learn/it-teams">IT Teams</a>; <a href="https://calendly.com/legal/customer-terms-conditions">Customer Terms</a> · as-of 2026-09-02</td>
+<td>SOC 2 Type 2 + SOC 3 + CSA STAR on <a href="https://calendly.com/security">calendly.com/security</a>. “SOC 2 Type 2 and ISO/IEC 27001” on <a href="https://calendly.com/learn/it-teams">calendly.com/learn/it-teams</a> (updated 2026-09-02). <strong>HIPAA: not a sold plan.</strong> Customer Terms bar PHI/HIPAA in Customer Data. Notetaker FAQ (search hit, page timed out on re-fetch): “Calendly isn't designed to collect Protected Health Information.” Treat HIPAA as <strong>not offered</strong>, not as a plan feature. · n/a · <a href="https://calendly.com/security">security</a>; <a href="https://calendly.com/learn/it-teams">IT Teams</a>; <a href="https://calendly.com/legal/customer-terms-conditions">Customer Terms</a> · as-of 2026-09-02</td>
 <td>Organizations bullets: <strong>“SOC 2, HIPAA, ISO 27001 compliant.”</strong> Company security page claims ISO 27001, SOC 2 Type II, CCPA, GDPR, HIPAA. Downloads: DPA, SOC 2 Type II, ISO 27001. <strong>Which Cloud plan signs a BAA: Organizations per /pricing; Enterprise sales.</strong> · Organizations yearly · <a href="https://cal.com/pricing">cal.com/pricing</a>; <a href="https://cal.com/security">cal.com/security</a> · as-of 2026-09-02</td>
 <td><strong>UNKNOWN</strong> on /pricing. No SOC2/HIPAA row. (SavvyCal Appointments marketing mentions HIPAA — that is a <strong>different product</strong>, not this packaging.) · n/a · <a href="https://savvycal.com/pricing">savvycal.com/pricing</a> · as-of 2026-09-02</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<hr>
 <h2>4. Packaging philosophy (how they make money)</h2>
 <p><strong>Calendly — seat ladder + AI upsell + Enterprise minimum.</strong> Free is a one-link demo (1 event type, 1 calendar). Standard ($10/seat/mo yearly, $12 monthly) sells the individual power-user: unlimited event types, six calendars, payments, collective/group, remove branding. Teams ($16 yearly, $20 monthly) sells the <strong>conversion job for a sales/CS team</strong>: round-robin, routing, admin-managed events. Plus plans (Notetaker + Callie) sit <strong>on top of</strong> Standard/Teams rather than inside them — AI is a second meter, not the scheduling core. Enterprise is not a feature pack for a 20-person company: it is a <strong>$15k/yr, 50-seat, USD-only</strong> procurement product (SSO, domain control, audit, Salesforce lookup). Invoice even on Standard/Teams starts at $5,000. They make money when a team hits round-robin, then again if the team wants notes, then again if IT wants SSO.</p>
 <p><strong>Cal.com Cloud — give the individual the product; charge the team; charge again for org security.</strong> Free forever is a real individual plan (unlimited event types and calendars, payments, CRM sync). Money starts at <strong>collaboration</strong> (Teams $12/user/mo yearly, $16 monthly: RR, managed events, remove branding). The expensive public tier is <strong>Organizations $28/user/mo yearly, $37 monthly</strong> for SAML/SCIM, company subdomain, HIPAA/SOC2/ISO — not for round-robin. Enterprise is custom/annual/sales. <strong>Cal.diy is not a cheap Cloud.</strong> It is a community MIT fork without teams/SSO; commercial on-prem is sales. Mixing “Cal.com is free to self-host” into Cloud pricing is a category error.</p>
 <p><strong>SavvyCal — two paid plans, no Free plan, team features on the first dollar.</strong> Basic $10/user/mo Annual ($12 monthly) already includes unlimited links/calendars <strong>and</strong> collective/round-robin/group. Premium $17 Annual ($20 monthly) is not “teams”; it is <strong>polish and commerce</strong>: custom domains, hide branding, Stripe, assistant delegate. They make money the first time someone activates (30-day money-back, no standing Free). The Premium gap is branding/payments, not routing. There is no public Enterprise/SSO tier — a 5–25 team never hits a sales wall because the wall is not on the page.</p>
-<hr />
+<hr>
 <h2>5. What a 5–25 person B2B team actually hits</h2>
 <p>A 5–25 person B2B team converting scheduling typically needs: more than one meeting type, more than one calendar, round-robin or collective for sales/CS, someone who is not the founder administering event templates, and a booking page that does not look like a consumer trial. SSO/HIPAA are <strong>not</strong> the week-one friction points unless the buyer is IT-led or clinical.</p>
 <p><strong>Calendly — where it creates friction</strong></p>
 <ol>
 <li><strong>Free is unusable as a team trial.</strong> One event type + one calendar. The help page says so. A 5-person sales team hits this on day one.</li>
 <li><strong>Round-robin is the second paid tier</strong> (Teams $16 yearly / $20 monthly), not Standard $10 yearly / $12 monthly. Collective exists on Standard; <strong>distribution</strong> does not. If your analogue of RR is the conversion feature, Calendly trains buyers to skip Standard.</li>
-<li><strong>SSO is not a self-serve Teams feature on the pricing page.</strong> It is Enterprise ($15k/yr, 50 seats) or an unpriced Teams add-on. A 15-person company <strong>cannot</strong> buy the public Enterprise minimum (50-seat minimum). That is the freeze lesson: do not copy a compliance plan your ideal customer cannot purchase.</li>
+<li><strong>SSO is not a self-serve Teams feature on the pricing page.</strong> It is Enterprise ($15k/yr, 50 seats) or an unpriced Teams add-on. A 15-person company <strong>cannot purchase that public Enterprise offer at 15 seats</strong> — it would have to overbuy to Calendly’s 50-seat minimum. That is the freeze lesson: do not copy a compliance path that forces your ideal customer to overbuy seats.</li>
 <li><strong>AI is a named extra plan</strong> (Plus). Fine — unless your checkout defaults to Plus and yearly Standard Plus $ is still unprinted.</li>
 </ol>
 <p><strong>Cal.com Cloud — where it creates friction</strong></p>
@@ -320,7 +375,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Branding/custom domain/payments are the Premium wall</strong> ($17 Annual / $20 monthly). If your ideal customer shares booking links with customers, hide-branding on the <strong>second</strong> tier is the SavvyCal tax. Calendly and Cal.com sell hide-branding <strong>with</strong> the first serious paid plan (Standard / Teams).</li>
 <li><strong>SSO/SOC2/HIPAA UNKNOWN.</strong> If your buyer’s security questionnaire requires printed SSO, SavvyCal’s public page does not close it.</li>
 </ol>
-<hr />
+<hr>
 <h2>6. Recommended plan structure</h2>
 <p><strong>Recommended structure for a 5–25 person B2B product:</strong> usable free (or near-free) plan for individuals → first paid plan = team scheduling (round-robin / managed events) → organization / SSO as a later public tier. That is Cal.com Cloud’s shape — not Calendly’s 50-seat Enterprise minimum, and not SavvyCal’s paid-only two plans unless you are explicitly not a product-led growth (PLG) motion.</p>
 <p>Labeled so you can argue with it:</p>
@@ -355,8 +410,8 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 </tr>
 <tr>
 <td><strong>SSO / Enterprise</strong></td>
-<td><strong>Do not copy Calendly’s public Enterprise minimum</strong> (starts $15k/yr, 50 seats, USD only). A 5–25 team is structurally excluded. If you need a compliance plan, copy <strong>Cal.com’s Organizations-style public tier</strong> (SSO/SCIM/HIPAA printed at $28/user/mo yearly / $37 monthly) or a sales-gated Enterprise <strong>without</strong> a 50-seat minimum printed as the only path. Calendly’s “SSO add-on on Teams” is <strong>unpriced</strong> — do not freeze an unpriced add-on as if it were a published plan.</td>
-<td><strong>FACT</strong> on published minimums. <strong>INFERENCE</strong> that 5–25 buyers cannot clear a 50-seat min.</td>
+<td><strong>Do not copy Calendly’s public Enterprise minimum</strong> (starts $15k/yr, 50 seats, USD only) as the only SSO path for a 5–25 ideal customer — they cannot buy it at their actual seat count without overbuying to 50 seats. If you need a public compliance tier, prefer <strong>Cal.com’s Organizations-style public tier</strong> (SAML/SCIM and SOC2/HIPAA/ISO <strong>claims printed</strong> at $28/user/mo yearly / $37 monthly; BAA/contractual entitlement <strong>not independently established</strong> beyond those public claims in this brief) or a sales-gated Enterprise <strong>without</strong> a 50-seat minimum as the only path. Calendly’s “SSO add-on on Teams” is <strong>unpriced</strong> — do not freeze an unpriced add-on as if it were a published plan.</td>
+<td><strong>FACT</strong> on published minimums and printed Organizations claims. <strong>INFERENCE</strong> that 5–25 buyers would have to overbuy to clear Calendly’s 50-seat public Enterprise offer.</td>
 </tr>
 <tr>
 <td><strong>Self-host</strong></td>
@@ -398,10 +453,10 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 </tr>
 </tbody>
 </table>
-<p><strong>Do not freeze a core team plan through</strong> Cal.com Organizations <strong>$28 /user/mo yearly</strong> ($37 monthly) or Calendly Enterprise <strong>$15k/yr · 50 seats</strong> without a written reason. Those are <strong>org-security / procurement</strong> plans, not team-scheduling plans.</p>
-<p><strong>Do not freeze an individual plan above</strong> Calendly Standard <strong>$10 /seat/mo yearly</strong> ($12 monthly) without a reason; Cal.com already does the individual job at <strong>$0</strong>.</p>
+<p>Treat Cal.com Organizations <strong>$28 /user/mo yearly</strong> ($37 monthly) and Calendly Enterprise <strong>$15k/yr · 50 seats</strong> as <strong>org-security / procurement</strong> reference points rather than the default core team-scheduling band, unless you have an explicit strategic rationale validated with customers.</p>
+<p>Pricing an individual paid plan above Calendly Standard <strong>$10 /seat/mo yearly</strong> ($12 monthly) should have an explicit strategic rationale and be validated with customers; Cal.com already does the individual job at <strong>$0</strong>. Competitor list prices are reference points, not your proven price.</p>
 <p><strong>Sales-gated (flag, do not freeze as self-serve):</strong> Calendly Enterprise; Cal.com Enterprise (Custom, annual); Cal.diy commercial on-prem (<a href="https://cal.com/sales">cal.com/sales</a>); Calendly Teams SSO add-on $; Calendly yearly Standard Plus $; invoice (Calendly Standard/Teams from $5,000). SavvyCal has <strong>no public Enterprise</strong>.</p>
-<hr />
+<hr>
 <h2>7. What would change the rec</h2>
 <ul>
 <li><strong>Calendly</strong> prints SSO/SCIM on Teams at a self-serve $ and drops the <strong>50-seat / $15k</strong> minimum → the “don’t copy Enterprise” warning weakens; you could copy a Teams+SSO bundle.</li>
@@ -412,7 +467,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>SavvyCal</strong> publishes a standing Free plan, or moves round-robin to Premium, or adds a public SSO/Enterprise price → two-plan simplicity (or its ideal customer) changed.</li>
 <li><strong>Cal.diy</strong> ships Teams/SSO in the MIT edition → self-host becomes a real Cloud competitor; today it is not.</li>
 </ul>
-<hr />
+<hr>
 <h2>Decision sheet — what to do next</h2>
 <p><strong>Not your list price</strong> — competitor public list, not your price. Monthly dollar amounts are Chrome-clicked facts, not Save-% math.</p>
 <p><strong>Recommended plan structure [strategic inference — validate with customers]:</strong> Cal.com Cloud shape — Free / Individual → Team (conversion) → Organization / Security (later) → optional AI add-on.</p>
@@ -435,7 +490,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <td>Usable individual product, not a one-link demo.</td>
 <td><strong>On Free:</strong> unlimited event types + &gt;1 calendar. Payments optional (Cal.com Free: Stripe &amp; PayPal). <strong>Not on Free:</strong> round-robin (none of the three put it there); hide branding (Calendly Standard / Cal.com Teams).</td>
 <td>Per user who connects a calendar. Invitees free.</td>
-<td>Cal.com Free <strong>$0</strong>. Calendly Free <strong>$0</strong> (but 1 type / 1 calendar). If you <em>sell</em> an individual paid plan, do not freeze it above Calendly Standard <strong>$10 /seat/mo billed yearly</strong> (<strong>$12</strong> monthly) without a written reason. SavvyCal: <strong>no standing Free plan</strong> (30-day money back visible).</td>
+<td>Cal.com Free <strong>$0</strong>. Calendly Free <strong>$0</strong> (but 1 type / 1 calendar). If you <em>sell</em> an individual paid plan, pricing above Calendly Standard <strong>$10 /seat/mo billed yearly</strong> (<strong>$12</strong> monthly) needs an explicit strategic rationale and customer validation. SavvyCal: <strong>no standing Free plan</strong> (30-day money back visible).</td>
 </tr>
 <tr>
 <td><strong>Team</strong></td>
@@ -443,7 +498,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <td>Team distribution — the job Calendly sells on the <em>second</em> paid tier.</td>
 <td><strong>Put here:</strong> round-robin, collective, admin-managed templates, remove branding. <strong>Not here as the only SSO path:</strong> SAML/SCIM/HIPAA (next tier).</td>
 <td>Per host seat. Invitees free.</td>
-<td><strong>Yearly / Annual:</strong> SavvyCal Basic <strong>$10 /user/mo</strong> (round-robin included). Cal.com Teams <strong>$12 /user/mo</strong> (round-robin + managed events + remove branding). Calendly Teams <strong>$16 /seat/mo</strong> (round-robin + admin). SavvyCal Premium <strong>$17 /user/mo</strong> (polish/commerce — not the round-robin placement). <strong>Monthly:</strong> SavvyCal Basic <strong>$12</strong> · Cal.com Teams <strong>$16</strong> · Calendly Teams <strong>$20</strong> · SavvyCal Premium <strong>$20</strong>. <strong>Do not freeze a core team plan through</strong> Cal.com Organizations <strong>$28 /user/mo yearly</strong> (<strong>$37</strong> monthly) or Calendly Enterprise <strong>$15k/yr · 50 seats</strong>.</td>
+<td><strong>Yearly / Annual:</strong> SavvyCal Basic <strong>$10 /user/mo</strong> (round-robin included). Cal.com Teams <strong>$12 /user/mo</strong> (round-robin + managed events + remove branding). Calendly Teams <strong>$16 /seat/mo</strong> (round-robin + admin). SavvyCal Premium <strong>$17 /user/mo</strong> (polish/commerce — not the round-robin placement). <strong>Monthly:</strong> SavvyCal Basic <strong>$12</strong> · Cal.com Teams <strong>$16</strong> · Calendly Teams <strong>$20</strong> · SavvyCal Premium <strong>$20</strong>. Organizations <strong>$28 /user/mo yearly</strong> (<strong>$37</strong> monthly) and Enterprise <strong>$15k/yr · 50 seats</strong> are org-security / procurement reference points — not the default team-scheduling band unless you have an explicit rationale.</td>
 </tr>
 <tr>
 <td><strong>Organization / Security</strong></td>
@@ -451,7 +506,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <td>Printed SSO/compliance. Later tier; keep it public if you sell to 5–25.</td>
 <td><strong>Put here:</strong> SAML SSO, SCIM. Cal.com Organizations: “SOC 2, HIPAA, ISO 27001 compliant” + <code>yourcompany.cal.com</code>. <strong>Do not copy:</strong> Calendly Enterprise <strong>$15k /yr · 50 seats · USD only</strong> as the only SSO path; Calendly Teams SSO add-on is <strong>unpriced / sales-gated</strong>. SavvyCal SSO/SOC2/HIPAA <strong>UNKNOWN</strong> on /pricing.</td>
 <td>Per user (Cal.com Organizations cards).</td>
-<td>Cal.com Organizations <strong>$28 /user/mo yearly</strong> / <strong>$37 monthly</strong> = only <em>public printed</em> compliance tier of the three. Calendly Enterprise <strong>$15k /yr · 50 seats</strong> = procurement, not a 5–25 self-serve plan. Cal.com Enterprise = Custom / “Talk to sales” (no public floor $).</td>
+<td>Cal.com Organizations <strong>$28 /user/mo yearly</strong> / <strong>$37 monthly</strong> = only <em>public printed</em> compliance tier of the three. Calendly Enterprise <strong>$15k /yr · 50 seats</strong> = procurement path that forces overbuying for a team under 50 seats — not a natural 5–25 self-serve plan. Cal.com Enterprise = Custom / “Talk to sales” (no public floor $).</td>
 </tr>
 <tr>
 <td><strong>Optional AI add-on</strong></td>
@@ -486,7 +541,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <tr>
 <td>Organization / Security</td>
 <td>Who prints SSO; $28 yearly / $37 monthly vs $15k / 50 seats</td>
-<td>A 5–25 buyer cannot clear a 50-seat min. Keep SSO self-serve if that is the ideal customer. Do not freeze an unpriced add-on as a published plan.</td>
+<td>A 5–25 buyer cannot purchase Calendly’s public Enterprise offer at actual headcount without overbuying to 50 seats. Keep SSO self-serve if that is the ideal customer. Do not freeze an unpriced add-on as a published plan.</td>
 </tr>
 <tr>
 <td>Optional AI add-on</td>
@@ -496,9 +551,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 </tbody>
 </table>
 <p><strong>Also do not:</strong> invent a buyer price from this band · average Cal.diy / self-host into Cloud list (MIT community; no teams/SSO; commercial on-prem = sales) · treat sales-gated as self-serve (Calendly Enterprise; Cal.com Enterprise; Cal.diy commercial; Teams SSO add-on $; yearly Standard Plus $; Calendly invoice from $5,000).</p>
-<hr />
+<hr>
 <h2>Visual evidence appendix</h2>
 <p>Chrome pass of rendered pricing pages. Captured <strong>2026-09-02 HST</strong> (2026-09-03 UTC). No login. Duplicate default shots omitted when the annual/yearly capture already covers the same state.</p>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Calendly yearly — Standard $10 / Teams $16 + Save badges</h3>
 <ul>
 <li><strong>Company:</strong> Calendly</li>
@@ -506,7 +563,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Billed yearly. Standard <strong>$10 /seat/mo</strong> (“Save 17%”) now visible on the rendered card; Teams <strong>$16 /seat/mo</strong> (“Save 20%”).</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Calendly yearly Standard $10 and Teams $16" src="screenshots/calendly-annual.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Calendly monthly — Standard $12 / Teams $20</h3>
 <ul>
 <li><strong>Company:</strong> Calendly</li>
@@ -514,7 +575,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Billed monthly. Standard <strong>$12 /seat/mo</strong>; Teams <strong>$20 /seat/mo</strong>. No Save-% badge.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Calendly monthly Standard $12 and Teams $20" src="screenshots/calendly-monthly.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Calendly Plus (monthly) — Standard Plus $24 / Teams Plus $32</h3>
 <ul>
 <li><strong>Company:</strong> Calendly</li>
@@ -522,7 +587,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> “Add Notetaker &amp; Callie” ON, monthly view. Card titles <strong>Standard Plus $24 /seat/mo</strong> and <strong>Teams Plus $32 /seat/mo</strong>. Yearly Standard Plus was <strong>not</strong> recaptured.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Calendly monthly Plus $24 and $32" src="screenshots/calendly-plus.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Calendly Enterprise — $15k/yr floor</h3>
 <ul>
 <li><strong>Company:</strong> Calendly</li>
@@ -530,7 +599,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Enterprise “Starts at <strong>$15k</strong> /yr.” No per-seat price on the card.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Calendly Enterprise starts at $15k/yr" src="screenshots/calendly-enterprise.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Cal.com yearly — Teams $12 / Organizations $28</h3>
 <ul>
 <li><strong>Company:</strong> Cal.com</li>
@@ -538,7 +611,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Per-card YEARLY toggles ON (default). Teams <strong>$12 per user/month</strong> (“Save 25%”); Organizations <strong>$28 per user/month</strong> (“Save 25%”). Individuals Free; Enterprise Custom. Cloud only — not Cal.diy.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Cal.com yearly Teams $12 and Organizations $28" src="screenshots/calcom-yearly.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>Cal.com monthly — Teams $16 / Organizations $37</h3>
 <ul>
 <li><strong>Company:</strong> Cal.com</li>
@@ -546,7 +623,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> YEARLY toggles off. Teams <strong>$16 per user/month</strong>; Organizations <strong>$37 per user/month</strong>.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="Cal.com monthly Teams $16 and Organizations $37" src="screenshots/calcom-monthly.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>SavvyCal annual — Basic $10 / Premium $17</h3>
 <ul>
 <li><strong>Company:</strong> SavvyCal</li>
@@ -554,7 +635,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Annual tab. Basic <strong>$10/user/mo</strong> (“Save 2 months”); Premium <strong>$17/user/mo</strong> (“Save 2 months”). 30-day money back visible above the cards.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="SavvyCal annual Basic $10 and Premium $17" src="screenshots/savvycal-annual.png" /></p>
+</div>
+<div class="evidence-block">
+<div class="evidence-caption">
 <h3>SavvyCal monthly — Basic $12 / Premium $20</h3>
 <ul>
 <li><strong>Company:</strong> SavvyCal</li>
@@ -562,7 +647,11 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Monthly tab. Basic <strong>$12/user/mo</strong>; Premium <strong>$20/user/mo</strong>.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="SavvyCal monthly Basic $12 and Premium $20" src="screenshots/savvycal-monthly.png" /></p>
+</div>
+<div class="evidence-block evidence-tall">
+<div class="evidence-caption">
 <h3>SavvyCal comparison — RR on both; branding / payments Premium</h3>
 <ul>
 <li><strong>Company:</strong> SavvyCal</li>
@@ -570,8 +659,10 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li><strong>Captured:</strong> 2026-09-02 HST</li>
 <li><strong>Claim supported:</strong> Collective / Round Robin / Group on <strong>both</strong> Basic and Premium. Delegated Access, Custom Domains, Custom Sending Domains, Remove SavvyCal Branding, Paid Bookings = <strong>Premium only</strong>. Replaces any search-index table.</li>
 </ul>
+</div>
 <p><img class="evidence" alt="SavvyCal comparison: RR on both; branding and payments Premium" src="screenshots/savvycal-comparison.png" /></p>
-<hr />
+</div>
+<hr>
 <h2>8. Offer</h2>
 <p>This matrix is Calendly / Cal.com / SavvyCal as of <strong>2026-09-02</strong>.</p>
 <h2>Order a Rival Brief</h2>
@@ -579,7 +670,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <p><strong>$299</strong> one-time. Delivery <strong>within 72 hours after scope validation</strong> (not automatically at payment).</p>
 <p>You send: (1) company name, (2) three public competitor pricing URLs, (3) the pricing / plan-structure decision to freeze (1–3 sentences).</p>
 <p>Rival Brief is a human-owned business. AI assists with research and drafting from public sources; final business responsibility remains with the owner. Public sources only. Not legal or pricing advice. See the Rival Brief site for refund and scope-validation summary. Checkout opens when ordering is live.</p>
-<hr />
+<hr>
 <h2>9. Source list</h2>
 <p>Fetched 2026-09-02 HST. Primary only. Browser pass 2026-09-02 evening HST / 2026-09-03 UTC.</p>
 <p><strong>Calendly</strong></p>
@@ -612,7 +703,7 @@ Cal.com column is <strong>Cloud</strong> unless the row says Cal.diy / self-host
 <li>https://docs.savvycal.com/article/6-embedding-links-on-your-website — custom domain <code>origin</code> (updated 2025-05-27).</li>
 </ol>
 <p><strong>Explicitly unused as prices/features:</strong> UseCarly, Costbench, meetergo, Zeeg, knock-ai, unlocksaas, plutio, and <strong>wf.savvycal.com/pricing</strong> (stale $12/$20).</p>
-<hr />
+<hr>
 <p><em>Rival Brief sample. Public pages as of 2026-09-02 HST. Not legal or pricing advice.</em></p>
 </body>
 </html>
