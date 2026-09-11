@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rival Brief — Freeze pricing and plan structure against three competitors</title>
   <meta name="description" content="Rival Brief is a $299 custom PDF that helps founders freeze pricing and plan structure against three named competitors in 72 hours after scope validation." />
-  <meta name="robots" content="noindex,nofollow" />
+  <meta name="robots" content="index,follow" />
   <style>
     :root {
       --bg: #f8fafc;
@@ -188,7 +188,6 @@
   </style>
 </head>
 <body>
-  <div class="banner">PRE-LAUNCH preview — checkout is not open to the public yet. Sample is real.</div>
 
   <div class="wrap">
     <header>
@@ -210,7 +209,7 @@
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="sample/">View Sample Brief</a>
-        <span class="btn btn-disabled" aria-disabled="true" title="Checkout opens after LAUNCH">Order a Rival Brief — $299 (opens at launch)</span>
+        <a class="btn btn-primary" id="order-cta-hero" href="#order">Order a Rival Brief — $299</a>
       </div>
       <p class="fine">$299 one-time · 72 hours after we validate your scope · public sources only</p>
       <p class="fine">Operated under JOBAGENTAI, a Hawaii sole proprietorship. Checkout may show “Peaklify” on the Stripe payment screen or receipt.</p>
@@ -293,7 +292,7 @@
         <section class="card" id="how">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><strong>Order</strong> when checkout opens ($299 one-time).</li>
+        <li><strong>Order</strong> ($299 one-time) via the Order button on this page.</li>
         <li><strong>Email intake</strong> to <a href="mailto:peaklify3@gmail.com">peaklify3@gmail.com</a> — company, three public pricing URLs, the decision to freeze, and how you heard about us.</li>
         <li><strong>Scope validation</strong> — we confirm the pages are usable in public. If not, you get a <strong>full refund before research starts</strong>.</li>
         <li><strong>Research</strong> — primary sources, real browser billing toggles, dated screenshots.</li>
@@ -322,15 +321,14 @@
         <section class="card" id="order">
       <h2>Order a Rival Brief — $299</h2>
       <p>
-        Checkout is <strong>not open to the public yet</strong>. This page is a pre-launch preview so you can
-        read the offer and open the real sample.
+        Checkout is open. Pay $299 one-time, then email intake so we can validate scope and start the 72-hour delivery window.
       </p>
       <div class="cta-row">
-        <span class="btn btn-disabled" aria-disabled="true" id="order-cta-ready" title="Checkout opens after LAUNCH">Order — opens at launch</span>
+        <a class="btn btn-primary" id="order-cta-ready" href="https://buy.stripe.com/6oUaEX2vQc1r3GncpY1Jm01">Order Rival Brief — $299</a>
         <a class="btn btn-secondary" href="sample/">View Sample Brief</a>
       </div>
       <p class="fine" style="margin-top:0.85rem;">
-        <strong>When ordering opens:</strong> pay $299 → email intake to
+        <strong>After you pay:</strong> email intake to
         <a href="mailto:peaklify3@gmail.com">peaklify3@gmail.com</a>
         (company, 3 public pricing URLs, decision to freeze, how you heard about us) →
         we validate scope → PDF within 72 hours after validation.
@@ -360,25 +358,27 @@
   </div>
 
   <script>
-  // Wave 1 attribution helper (pre-LAUNCH). Order CTA stays disabled.
-  // Maps utm_source=indiehackers (or ih) → client_reference_id=ih-wave1.
-  // Payment Link BASE is intentionally empty until Will says LAUNCH. Do not distribute Payment Links.
+  // Wave 1 attribution helper (LAUNCH). Maps utm_source=indiehackers|ih → client_reference_id=ih-wave1.
+  // Order CTAs point at Payment Link + client_reference_id (+ UTMs when present).
   (function () {
-    var BASE = ""; // set to unpublished Payment Link only at LAUNCH
+    var BASE = "https://buy.stripe.com/6oUaEX2vQc1r3GncpY1Jm01";
     var params = new URLSearchParams(window.location.search);
     var src = (params.get("utm_source") || "").toLowerCase();
     var ref = "landing";
     if (src.indexOf("indiehackers") >= 0 || src === "ih") ref = "ih-wave1";
     else if (src === "direct") ref = "direct";
     else if (src) ref = src.slice(0, 40);
-    var ready = document.getElementById("order-cta-ready");
-    if (ready) ready.setAttribute("data-client-reference-id", ref);
-    if (!BASE) return;
     var url = BASE + "?client_reference_id=" + encodeURIComponent(ref);
     ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function (k) {
       var v = params.get(k); if (v) url += "&" + k + "=" + encodeURIComponent(v);
     });
-    ready.setAttribute("data-checkout-url", url);
+    ["order-cta-ready", "order-cta-hero"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.setAttribute("data-client-reference-id", ref);
+      el.setAttribute("data-checkout-url", url);
+      el.setAttribute("href", url);
+    });
   })();
   </script>
 
