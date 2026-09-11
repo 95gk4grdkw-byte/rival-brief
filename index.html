@@ -213,7 +213,7 @@
         <span class="btn btn-disabled" aria-disabled="true" title="Checkout opens after LAUNCH">Order a Rival Brief — $299 (opens at launch)</span>
       </div>
       <p class="fine">$299 one-time · 72 hours after we validate your scope · public sources only</p>
-      <p class="fine">Operated by JOBAGENTAI (Hawaii sole proprietorship). Checkout may show “Peaklify” on the Stripe payment screen or receipt.</p>
+      <p class="fine">Operated under JOBAGENTAI, a Hawaii sole proprietorship. Checkout may show “Peaklify” on the Stripe payment screen or receipt.</p>
     </section>
 
     <section class="card" id="who">
@@ -311,7 +311,7 @@
     <section class="card" id="disclosure">
       <h2>AI &amp; ownership disclosure</h2>
       <p>
-        <strong>Rival Brief is operated by JOBAGENTAI, a Hawaii sole proprietorship.</strong>
+        <strong>Rival Brief is operated under JOBAGENTAI, a Hawaii sole proprietorship.</strong>
       </p>
       <p>
         Rival Brief is a human-owned business. AI assists with research and drafting from public sources;
@@ -326,7 +326,7 @@
         read the offer and open the real sample.
       </p>
       <div class="cta-row">
-        <span class="btn btn-disabled" aria-disabled="true">Order — opens at launch</span>
+        <span class="btn btn-disabled" aria-disabled="true" id="order-cta-ready" title="Checkout opens after LAUNCH">Order — opens at launch</span>
         <a class="btn btn-secondary" href="sample/">View Sample Brief</a>
       </div>
       <p class="fine" style="margin-top:0.85rem;">
@@ -355,8 +355,32 @@
     </section>
 
     <footer>
-      <p>Rival Brief is operated by JOBAGENTAI, a Hawaii sole proprietorship.</p>
+      <p>Rival Brief is operated under JOBAGENTAI, a Hawaii sole proprietorship.</p>
     </footer>
   </div>
+
+  <script>
+  // Wave 1 attribution helper (pre-LAUNCH). Order CTA stays disabled.
+  // Maps utm_source=indiehackers (or ih) → client_reference_id=ih-wave1.
+  // Payment Link BASE is intentionally empty until Will says LAUNCH. Do not distribute Payment Links.
+  (function () {
+    var BASE = ""; // set to unpublished Payment Link only at LAUNCH
+    var params = new URLSearchParams(window.location.search);
+    var src = (params.get("utm_source") || "").toLowerCase();
+    var ref = "landing";
+    if (src.indexOf("indiehackers") >= 0 || src === "ih") ref = "ih-wave1";
+    else if (src === "direct") ref = "direct";
+    else if (src) ref = src.slice(0, 40);
+    var ready = document.getElementById("order-cta-ready");
+    if (ready) ready.setAttribute("data-client-reference-id", ref);
+    if (!BASE) return;
+    var url = BASE + "?client_reference_id=" + encodeURIComponent(ref);
+    ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function (k) {
+      var v = params.get(k); if (v) url += "&" + k + "=" + encodeURIComponent(v);
+    });
+    ready.setAttribute("data-checkout-url", url);
+  })();
+  </script>
+
 </body>
 </html>
